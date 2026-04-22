@@ -1,1 +1,0 @@
-# ghcp-school-intro
