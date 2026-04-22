@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="ライブラリ">
+  <rect width="600" height="400" fill="#1B2E22"/>
+  <!-- bookshelves -->
+  <g>
+    <rect x="40" y="60" width="160" height="280" fill="#6E5236"/>
+    <rect x="400" y="60" width="160" height="280" fill="#6E5236"/>
+    <g fill="#D9C28B">
+      <rect x="50" y="80" width="14" height="50"/><rect x="68" y="80" width="14" height="50"/>
+      <rect x="86" y="80" width="14" height="50"/><rect x="104" y="80" width="14" height="50"/>
+      <rect x="122" y="80" width="14" height="50"/><rect x="140" y="80" width="14" height="50"/>
+      <rect x="158" y="80" width="14" height="50"/><rect x="176" y="80" width="14" height="50"/>
+    </g>
+    <g fill="#6FA46B">
+      <rect x="50" y="150" width="14" height="50"/><rect x="68" y="150" width="14" height="50"/>
+      <rect x="86" y="150" width="14" height="50"/><rect x="104" y="150" width="14" height="50"/>
+      <rect x="122" y="150" width="14" height="50"/><rect x="140" y="150" width="14" height="50"/>
+      <rect x="158" y="150" width="14" height="50"/><rect x="176" y="150" width="14" height="50"/>
+    </g>
+    <g fill="#8C6A4A">
+      <rect x="50" y="220" width="14" height="50"/><rect x="68" y="220" width="14" height="50"/>
+      <rect x="86" y="220" width="14" height="50"/><rect x="104" y="220" width="14" height="50"/>
+      <rect x="122" y="220" width="14" height="50"/><rect x="140" y="220" width="14" height="50"/>
+      <rect x="158" y="220" width="14" height="50"/><rect x="176" y="220" width="14" height="50"/>
+    </g>
+    <!-- right shelf -->
+    <g fill="#D9C28B"><rect x="410" y="80" width="14" height="50"/><rect x="428" y="80" width="14" height="50"/><rect x="446" y="80" width="14" height="50"/><rect x="464" y="80" width="14" height="50"/><rect x="482" y="80" width="14" height="50"/><rect x="500" y="80" width="14" height="50"/><rect x="518" y="80" width="14" height="50"/><rect x="536" y="80" width="14" height="50"/></g>
+    <g fill="#6FA46B"><rect x="410" y="150" width="14" height="50"/><rect x="428" y="150" width="14" height="50"/><rect x="446" y="150" width="14" height="50"/><rect x="464" y="150" width="14" height="50"/><rect x="482" y="150" width="14" height="50"/><rect x="500" y="150" width="14" height="50"/><rect x="518" y="150" width="14" height="50"/><rect x="536" y="150" width="14" height="50"/></g>
+    <g fill="#8C6A4A"><rect x="410" y="220" width="14" height="50"/><rect x="428" y="220" width="14" height="50"/><rect x="446" y="220" width="14" height="50"/><rect x="464" y="220" width="14" height="50"/><rect x="482" y="220" width="14" height="50"/><rect x="500" y="220" width="14" height="50"/><rect x="518" y="220" width="14" height="50"/><rect x="536" y="220" width="14" height="50"/></g>
+  </g>
+  <!-- reading lamp -->
+  <g transform="translate(280,200)">
+    <rect x="-2" y="40" width="4" height="80" fill="#8C6A4A"/>
+    <ellipse cx="0" cy="40" rx="40" ry="16" fill="#D9C28B"/>
+    <ellipse cx="0" cy="120" rx="40" ry="6" fill="#6E5236"/>
+  </g>
+  <rect y="340" width="600" height="60" fill="#0F1B14"/>
+</svg>

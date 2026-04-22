@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="森の散歩道">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6FA46B"/><stop offset="1" stop-color="#1B2E22"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky3)"/>
+  <!-- path -->
+  <polygon points="350,500 450,500 480,260 320,260" fill="#8C6A4A"/>
+  <polygon points="380,500 420,500 430,260 370,260" fill="#6E5236" opacity="0.5"/>
+  <!-- trees -->
+  <g>
+    <polygon points="60,400 140,180 220,400" fill="#1B2E22"/>
+    <polygon points="100,420 180,200 260,420" fill="#0F1B14"/>
+    <polygon points="540,400 620,180 700,400" fill="#1B2E22"/>
+    <polygon points="580,420 660,200 740,420" fill="#0F1B14"/>
+  </g>
+  <!-- ground -->
+  <rect y="400" width="800" height="100" fill="#243C2D"/>
+  <!-- light spots -->
+  <circle cx="400" cy="380" r="60" fill="#D9C28B" opacity="0.18"/>
+  <circle cx="380" cy="320" r="40" fill="#D9C28B" opacity="0.12"/>
+</svg>

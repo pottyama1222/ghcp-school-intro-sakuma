@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="ラボで制作する学生">
+  <rect width="800" height="500" fill="#1B2E22"/>
+  <!-- wall -->
+  <rect width="800" height="320" fill="#243C2D"/>
+  <!-- window -->
+  <rect x="60" y="40" width="240" height="180" fill="#6FA46B" opacity="0.5" stroke="#8C6A4A" stroke-width="6"/>
+  <line x1="180" y1="40" x2="180" y2="220" stroke="#8C6A4A" stroke-width="6"/>
+  <line x1="60" y1="130" x2="300" y2="130" stroke="#8C6A4A" stroke-width="6"/>
+  <!-- desk -->
+  <rect x="0" y="320" width="800" height="20" fill="#8C6A4A"/>
+  <!-- people silhouettes -->
+  <g fill="#0F1B14">
+    <circle cx="450" cy="200" r="40"/>
+    <rect x="410" y="240" width="80" height="120" rx="20"/>
+    <circle cx="600" cy="210" r="38"/>
+    <rect x="562" y="248" width="76" height="112" rx="18"/>
+  </g>
+  <!-- monitor -->
+  <rect x="400" y="280" width="100" height="60" fill="#0F1B14" stroke="#6FA46B" stroke-width="2"/>
+  <rect x="408" y="288" width="84" height="44" fill="#2F5D3A"/>
+  <rect x="416" y="296" width="50" height="4" fill="#D9C28B"/>
+  <rect x="416" y="306" width="40" height="4" fill="#6FA46B"/>
+  <!-- lamp -->
+  <g transform="translate(700,260)">
+    <ellipse cx="0" cy="0" rx="30" ry="14" fill="#D9C28B"/>
+    <rect x="-2" y="0" width="4" height="60" fill="#8C6A4A"/>
+  </g>
+</svg>

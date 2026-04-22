@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="校舎">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2E22"/><stop offset="1" stop-color="#2F5D3A"/>
+    </linearGradient>
+    <radialGradient id="beam" cx="0.3" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#D9C28B" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#D9C28B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#sky)"/>
+  <rect width="600" height="400" fill="url(#beam)"/>
+  <!-- trees back -->
+  <g fill="#0F1B14" opacity="0.7">
+    <polygon points="60,260 110,160 160,260"/>
+    <polygon points="120,280 170,180 220,280"/>
+    <polygon points="430,260 480,170 530,260"/>
+    <polygon points="490,280 540,190 590,280"/>
+  </g>
+  <!-- school building -->
+  <g>
+    <rect x="180" y="200" width="240" height="140" fill="#8C6A4A"/>
+    <polygon points="160,200 300,120 440,200" fill="#6E5236"/>
+    <rect x="200" y="240" width="40" height="50" fill="#D9C28B"/>
+    <rect x="260" y="240" width="40" height="50" fill="#D9C28B"/>
+    <rect x="320" y="240" width="40" height="50" fill="#D9C28B"/>
+    <rect x="280" y="295" width="40" height="45" fill="#3a2818"/>
+  </g>
+  <rect y="340" width="600" height="60" fill="#0F1B14"/>
+</svg>

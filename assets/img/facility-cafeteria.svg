@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="食堂">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6FA46B"/><stop offset="1" stop-color="#1B2E22"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#1B2E22"/>
+  <!-- big window -->
+  <rect x="40" y="40" width="520" height="220" fill="url(#g2)" stroke="#8C6A4A" stroke-width="6"/>
+  <line x1="300" y1="40" x2="300" y2="260" stroke="#8C6A4A" stroke-width="6"/>
+  <!-- trees through window -->
+  <g fill="#0F1B14" opacity="0.6">
+    <polygon points="80,260 120,140 160,260"/>
+    <polygon points="200,260 240,160 280,260"/>
+    <polygon points="320,260 360,150 400,260"/>
+    <polygon points="440,260 480,170 520,260"/>
+  </g>
+  <!-- table -->
+  <rect x="80" y="290" width="440" height="20" fill="#8C6A4A"/>
+  <rect x="100" y="310" width="20" height="60" fill="#6E5236"/>
+  <rect x="480" y="310" width="20" height="60" fill="#6E5236"/>
+  <!-- plates -->
+  <circle cx="180" cy="290" r="22" fill="#F2EFE6"/>
+  <circle cx="180" cy="290" r="14" fill="#D9C28B"/>
+  <circle cx="300" cy="290" r="22" fill="#F2EFE6"/>
+  <circle cx="300" cy="290" r="14" fill="#6FA46B"/>
+  <circle cx="420" cy="290" r="22" fill="#F2EFE6"/>
+  <circle cx="420" cy="290" r="14" fill="#8C6A4A"/>
+</svg>
