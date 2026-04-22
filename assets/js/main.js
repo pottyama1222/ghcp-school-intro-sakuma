@@ -1,12 +1,14 @@
-/* 神山まるごと高専 紹介ページ — Interactive */
+/* 神山まるごと高専 紹介ページ — Interactive (Enhanced) */
 (() => {
   'use strict';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ===== 1. Year ===== */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ===== 2. Theme toggle (dark/light) ===== */
+  /* ===== 2. Theme toggle ===== */
   const root = document.documentElement;
   const themeBtn = document.getElementById('themeToggle');
   const STORAGE_KEY = 'kamiyama-theme';
@@ -17,6 +19,7 @@
       themeBtn.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
       themeBtn.setAttribute('aria-label', theme === 'light' ? 'ダークモードへ切り替え' : 'ライトモードへ切り替え');
     }
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#F4F1E8' : '#0F1B14');
   };
 
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -59,23 +62,100 @@
     if (e.key === 'Escape') closeMenu();
   });
 
-  /* ===== 4. IntersectionObserver fade-in ===== */
+  /* ===== 4. Reveal animation + count-up ===== */
   const reveals = document.querySelectorAll('.reveal');
+  const countUp = (el) => {
+    const target = parseFloat(el.getAttribute('data-count'));
+    if (Number.isNaN(target)) return;
+    if (reduceMotion) { el.textContent = target.toLocaleString(); return; }
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          entry.target.querySelectorAll('[data-count]').forEach(countUp);
           io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach((el) => io.observe(el));
   } else {
-    reveals.forEach((el) => el.classList.add('is-visible'));
+    reveals.forEach((el) => {
+      el.classList.add('is-visible');
+      el.querySelectorAll('[data-count]').forEach((c) => (c.textContent = c.getAttribute('data-count')));
+    });
   }
 
-  /* ===== 5. Carousel ===== */
+  /* ===== 5. Active nav highlighting ===== */
+  const navLinks = document.querySelectorAll('[data-nav]');
+  const sections = Array.from(navLinks)
+    .map((a) => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const navIo = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach((a) =>
+            a.classList.toggle('is-active', a.getAttribute('href') === `#${id}`)
+          );
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach((s) => navIo.observe(s));
+  }
+
+  /* ===== 6. Scroll progress + header shadow + to-top ===== */
+  const bar = document.getElementById('scrollBar');
+  const header = document.getElementById('siteHeader');
+  const toTop = document.getElementById('toTop');
+  const trunks = document.querySelector('.hero-trunks');
+
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar) bar.style.width = `${Math.min(100, (y / max) * 100)}%`;
+      header?.classList.toggle('is-scrolled', y > 8);
+      toTop?.classList.toggle('is-visible', y > 600);
+      if (trunks && !reduceMotion && y < window.innerHeight * 1.2) {
+        trunks.style.transform = `translateY(${y * 0.18}px)`;
+      }
+      ticking = false;
+    });
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  toTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  /* ===== 7. Card pointer-glow ===== */
+  document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+      card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    });
+  });
+
+  /* ===== 8. Carousel ===== */
   const carousel = document.getElementById('carousel');
   if (carousel) {
     const track = carousel.querySelector('.carousel-track');
@@ -86,7 +166,6 @@
     const thumbs = document.getElementById('thumbs');
     let current = 0;
 
-    // Build dots
     slides.forEach((_, i) => {
       const b = document.createElement('button');
       b.type = 'button';
@@ -96,7 +175,6 @@
       dotsWrap.appendChild(b);
     });
 
-    // Build thumbnails
     if (thumbs) {
       slides.forEach((slide, i) => {
         const img = slide.querySelector('img');
@@ -114,8 +192,9 @@
     }
 
     const updateState = () => {
-      const dots = dotsWrap.querySelectorAll('button');
-      dots.forEach((d, i) => d.setAttribute('aria-selected', i === current ? 'true' : 'false'));
+      dotsWrap.querySelectorAll('button').forEach((d, i) =>
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false')
+      );
       if (thumbs) {
         thumbs.querySelectorAll('button').forEach((t, i) =>
           t.setAttribute('aria-current', i === current ? 'true' : 'false')
@@ -125,19 +204,17 @@
 
     const goTo = (i) => {
       current = (i + slides.length) % slides.length;
-      slides[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      slides[current].scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', inline: 'center', block: 'nearest' });
       updateState();
     };
 
     prevBtn?.addEventListener('click', () => goTo(current - 1));
     nextBtn?.addEventListener('click', () => goTo(current + 1));
-
     track.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
       if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
     });
 
-    // Detect scroll position to sync state
     let scrollT;
     track.addEventListener('scroll', () => {
       clearTimeout(scrollT);
@@ -149,15 +226,29 @@
           const d = Math.abs(c - center);
           if (d < min) { min = d; nearest = i; }
         });
-        current = nearest;
-        updateState();
-      }, 80);
+        if (current !== nearest) { current = nearest; updateState(); }
+      }, 90);
     });
+
+    // Auto-advance (pause on hover/focus/visibility)
+    let autoTimer;
+    const startAuto = () => {
+      if (reduceMotion) return;
+      stopAuto();
+      autoTimer = setInterval(() => goTo(current + 1), 6000);
+    };
+    const stopAuto = () => clearInterval(autoTimer);
+    carousel.addEventListener('pointerenter', stopAuto);
+    carousel.addEventListener('pointerleave', startAuto);
+    carousel.addEventListener('focusin', stopAuto);
+    carousel.addEventListener('focusout', startAuto);
+    document.addEventListener('visibilitychange', () => document.hidden ? stopAuto() : startAuto());
+    startAuto();
 
     updateState();
   }
 
-  /* ===== 6. Lightbox ===== */
+  /* ===== 9. Lightbox ===== */
   const lightbox = document.getElementById('lightbox');
   const lbImage = document.getElementById('lbImage');
   const lbCaption = document.getElementById('lbCaption');
@@ -179,7 +270,6 @@
 
   lbItems.forEach((el, i) => {
     el.addEventListener('click', (e) => {
-      // Avoid hijacking carousel button clicks; check target is not a button
       if (e.target.closest('.carousel-btn')) return;
       e.preventDefault();
       showLb(i);
@@ -200,7 +290,6 @@
     if (e.key === 'ArrowRight') showLb(lbIndex + 1);
   });
 
-  // Click on backdrop closes
   lightbox?.addEventListener('click', (e) => {
     if (e.target === lightbox) lightbox.close();
   });

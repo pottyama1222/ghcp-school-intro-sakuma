@@ -1,29 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="木漏れ日のキャンパス">
   <defs>
     <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2F5D3A"/><stop offset="1" stop-color="#0F1B14"/>
+      <stop offset="0" stop-color="#3a6849"/><stop offset="1" stop-color="#0F1B14"/>
     </linearGradient>
-    <radialGradient id="ray" cx="0.25" cy="0.1" r="0.8">
-      <stop offset="0" stop-color="#D9C28B" stop-opacity="0.55"/>
+    <radialGradient id="ray1" cx="0.25" cy="0.05" r="0.85">
+      <stop offset="0" stop-color="#E9D6A6" stop-opacity="0.7"/>
+      <stop offset="0.6" stop-color="#D9C28B" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#D9C28B" stop-opacity="0"/>
     </radialGradient>
   </defs>
   <rect width="800" height="500" fill="url(#sky1)"/>
-  <rect width="800" height="500" fill="url(#ray)"/>
-  <g fill="#0F1B14" opacity="0.85">
-    <rect x="100" y="100" width="20" height="320"/>
-    <rect x="240" y="60" width="22" height="360"/>
-    <rect x="400" y="120" width="18" height="300"/>
-    <rect x="540" y="80" width="22" height="340"/>
-    <rect x="680" y="140" width="18" height="280"/>
+  <!-- background canopy -->
+  <g fill="#1B2E22" opacity="0.8">
+    <ellipse cx="100" cy="40" rx="160" ry="80"/>
+    <ellipse cx="300" cy="20" rx="200" ry="100"/>
+    <ellipse cx="550" cy="30" rx="180" ry="90"/>
+    <ellipse cx="750" cy="50" rx="160" ry="80"/>
   </g>
-  <g fill="#6FA46B" opacity="0.4">
-    <circle cx="110" cy="120" r="80"/>
-    <circle cx="250" cy="80" r="100"/>
-    <circle cx="410" cy="140" r="90"/>
-    <circle cx="550" cy="100" r="110"/>
-    <circle cx="690" cy="160" r="80"/>
+  <!-- light rays -->
+  <rect width="800" height="500" fill="url(#ray1)"/>
+  <g opacity="0.35">
+    <polygon points="120,0 180,0 380,500 320,500" fill="#E9D6A6"/>
+    <polygon points="320,0 360,0 460,500 420,500" fill="#E9D6A6"/>
+    <polygon points="500,0 540,0 600,500 560,500" fill="#E9D6A6"/>
   </g>
+  <!-- tree trunks -->
+  <g fill="#3a2818">
+    <rect x="100" y="60" width="20" height="380"/>
+    <rect x="240" y="40" width="24" height="400"/>
+    <rect x="400" y="80" width="18" height="360"/>
+    <rect x="540" y="50" width="22" height="390"/>
+    <rect x="680" y="100" width="20" height="340"/>
+  </g>
+  <g fill="#5B4530" opacity="0.6">
+    <rect x="100" y="60" width="6" height="380"/>
+    <rect x="240" y="40" width="6" height="400"/>
+    <rect x="400" y="80" width="5" height="360"/>
+    <rect x="540" y="50" width="6" height="390"/>
+    <rect x="680" y="100" width="5" height="340"/>
+  </g>
+  <!-- foreground foliage -->
+  <g fill="#0F1B14">
+    <ellipse cx="80" cy="380" rx="120" ry="40"/>
+    <ellipse cx="720" cy="380" rx="140" ry="40"/>
+  </g>
+  <!-- ground -->
   <rect y="420" width="800" height="80" fill="#1B2E22"/>
   <path d="M0,440 Q400,420 800,440 L800,500 L0,500 Z" fill="#0F1B14"/>
+  <!-- grass tufts -->
+  <g fill="#2F5D3A">
+    <circle cx="180" cy="430" r="10"/><circle cx="220" cy="438" r="8"/>
+    <circle cx="380" cy="432" r="9"/><circle cx="460" cy="436" r="10"/>
+    <circle cx="600" cy="430" r="8"/><circle cx="640" cy="438" r="10"/>
+  </g>
+  <!-- light spots on ground -->
+  <g fill="#D9C28B" opacity="0.25">
+    <ellipse cx="350" cy="460" rx="50" ry="6"/>
+    <ellipse cx="450" cy="465" rx="40" ry="5"/>
+  </g>
+  <!-- floating particles -->
+  <g fill="#E9D6A6" opacity="0.7">
+    <circle cx="200" cy="200" r="2"/><circle cx="280" cy="160" r="1.5"/>
+    <circle cx="350" cy="240" r="2"/><circle cx="430" cy="180" r="1.5"/>
+    <circle cx="510" cy="220" r="2"/><circle cx="580" cy="170" r="1.5"/>
+    <circle cx="640" cy="250" r="2"/>
+  </g>
 </svg>

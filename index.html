@@ -7,13 +7,11 @@
   <meta name="description" content="徳島県神山町にある神山まるごと高専を紹介する非公式ページ。テクノロジー×デザイン×起業家精神を5年一貫で学ぶ全寮制の高専を、深い森と木漏れ日のテーマでご案内します。" />
   <meta name="theme-color" content="#0F1B14" />
 
-  <!-- OGP -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="神山まるごと高専 紹介ページ" />
   <meta property="og:description" content="徳島・神山の森で、テクノロジーとデザインと起業家精神を学ぶ。" />
   <meta property="og:locale" content="ja_JP" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet" />
@@ -22,6 +20,8 @@
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
 
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
@@ -35,11 +35,13 @@
 
       <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
         <ul class="nav-list">
-          <li><a href="#about">概要</a></li>
-          <li><a href="#curriculum">教育</a></li>
-          <li><a href="#campus">施設</a></li>
-          <li><a href="#life">学生生活</a></li>
-          <li><a href="#gallery">ギャラリー</a></li>
+          <li><a href="#about" data-nav>概要</a></li>
+          <li><a href="#stats" data-nav>数字</a></li>
+          <li><a href="#curriculum" data-nav>教育</a></li>
+          <li><a href="#campus" data-nav>施設</a></li>
+          <li><a href="#life" data-nav>学生生活</a></li>
+          <li><a href="#voices" data-nav>声</a></li>
+          <li><a href="#gallery" data-nav>ギャラリー</a></li>
         </ul>
       </nav>
 
@@ -59,22 +61,37 @@
     <!-- 1. ヒーロー -->
     <section id="hero" class="hero" aria-label="ヒーロー">
       <div class="hero-bg" aria-hidden="true">
-        <svg class="leaf-pattern" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <pattern id="leaves" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
-              <g fill="rgba(111,164,107,0.18)">
-                <path d="M20 60 C 20 40, 40 20, 60 20 C 60 40, 40 60, 20 60 Z"/>
-                <path d="M70 90 C 70 75, 85 60, 100 60 C 100 75, 85 90, 70 90 Z" fill="rgba(217,194,139,0.12)"/>
-              </g>
-            </pattern>
-            <radialGradient id="sunbeam" cx="30%" cy="20%" r="60%">
-              <stop offset="0%" stop-color="rgba(217,194,139,0.45)"/>
-              <stop offset="60%" stop-color="rgba(217,194,139,0)"/>
-            </radialGradient>
-          </defs>
-          <rect width="800" height="600" fill="url(#leaves)"/>
-          <rect width="800" height="600" fill="url(#sunbeam)"/>
+        <svg class="hero-mountains" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
+          <path d="M0,420 L180,300 L320,400 L520,250 L740,380 L920,260 L1140,400 L1300,310 L1440,400 L1440,600 L0,600 Z" fill="rgba(15,27,20,0.55)"/>
+          <path d="M0,480 L160,380 L340,460 L560,340 L780,440 L1000,360 L1220,460 L1440,400 L1440,600 L0,600 Z" fill="rgba(15,27,20,0.85)"/>
         </svg>
+
+        <div class="hero-trunks" data-parallax="0.15">
+          <svg viewBox="0 0 1440 600" preserveAspectRatio="xMidYMax slice">
+            <g fill="rgba(15,27,20,0.92)">
+              <rect x="80" y="100" width="22" height="500"/>
+              <rect x="320" y="60" width="26" height="540"/>
+              <rect x="640" y="120" width="20" height="480"/>
+              <rect x="980" y="80" width="24" height="520"/>
+              <rect x="1280" y="140" width="22" height="460"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="sunbeams">
+          <span class="beam beam-1"></span>
+          <span class="beam beam-2"></span>
+          <span class="beam beam-3"></span>
+        </div>
+
+        <div class="leaves">
+          <span class="leaf l1"></span>
+          <span class="leaf l2"></span>
+          <span class="leaf l3"></span>
+          <span class="leaf l4"></span>
+          <span class="leaf l5"></span>
+          <span class="leaf l6"></span>
+        </div>
       </div>
 
       <div class="container hero-inner">
@@ -91,6 +108,13 @@
           <a href="#about" class="btn btn-primary">学校を知る</a>
           <a href="#curriculum" class="btn btn-ghost">学びを見る</a>
         </div>
+
+        <ul class="hero-meta" aria-label="基本情報">
+          <li><span aria-hidden="true">📍</span>徳島県 神山町</li>
+          <li><span aria-hidden="true">🌱</span>2023年 開校</li>
+          <li><span aria-hidden="true">🏠</span>全寮制</li>
+          <li><span aria-hidden="true">📅</span>5年一貫</li>
+        </ul>
       </div>
 
       <a href="#about" class="scroll-cue" aria-label="次のセクションへスクロール">
@@ -98,7 +122,6 @@
       </a>
     </section>
 
-    <!-- 波線セパレータ -->
     <div class="wave-sep" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="currentColor"/></svg>
     </div>
@@ -116,7 +139,7 @@
           <article class="card reveal">
             <div class="card-icon" aria-hidden="true">📍</div>
             <h3>所在地</h3>
-            <p>徳島県名西郡神山町。山々に抱かれた小さな町に、キャンパスがあります。</p>
+            <p>徳島県名西郡神山町。山々に抱かれた小さな町に、キャンパスがあります。豊かな自然と、IT企業のサテライトオフィスが共存するユニークな土地です。</p>
           </article>
           <article class="card reveal">
             <div class="card-icon" aria-hidden="true">🌱</div>
@@ -131,13 +154,43 @@
           <article class="card reveal">
             <div class="card-icon" aria-hidden="true">🏛️</div>
             <h3>運営</h3>
-            <p>地域・産業・教育の専門家が結集して設立された学校法人が運営。寄付による奨学金制度も特徴です。</p>
+            <p>地域・産業・教育の専門家が結集して設立。寄付による奨学金制度で、家計状況にかかわらず学びの機会を支えます。</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 3. 教育内容・カリキュラム -->
+    <!-- 3. 数字で見る -->
+    <section id="stats" class="section section-stats">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">By the Numbers</p>
+          <h2>数字で見る神山</h2>
+          <p class="section-lead">小さな町の、大きな挑戦。<small>※公式公開情報を参考にした概数</small></p>
+        </header>
+
+        <div class="stat-grid">
+          <article class="stat reveal">
+            <p class="stat-num"><span data-count="5">0</span><span class="stat-unit">年</span></p>
+            <p class="stat-label">5年一貫教育</p>
+          </article>
+          <article class="stat reveal">
+            <p class="stat-num"><span data-count="40">0</span><span class="stat-unit">名</span></p>
+            <p class="stat-label">1学年の定員</p>
+          </article>
+          <article class="stat reveal">
+            <p class="stat-num"><span data-count="100">0</span><span class="stat-unit">%</span></p>
+            <p class="stat-label">全寮制</p>
+          </article>
+          <article class="stat reveal">
+            <p class="stat-num"><span data-count="3">0</span><span class="stat-unit">本柱</span></p>
+            <p class="stat-label">技術 × デザイン × 起業</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 教育内容・カリキュラム -->
     <section id="curriculum" class="section section-curriculum">
       <div class="container">
         <header class="section-head reveal">
@@ -151,16 +204,19 @@
             <div class="pillar-num">01</div>
             <h3>テクノロジー</h3>
             <p>プログラミング、AI、ハードウェア、ネットワークまで。実装できる技術力を身につける。</p>
+            <ul class="tag-list"><li>Web/Mobile</li><li>AI/データ</li><li>IoT</li></ul>
           </article>
           <article class="pillar reveal">
             <div class="pillar-num">02</div>
             <h3>デザイン</h3>
             <p>観察・発想・形にする力。UI/UXからプロダクト、ブランドまで横断的に学ぶ。</p>
+            <ul class="tag-list"><li>UI/UX</li><li>グラフィック</li><li>プロダクト</li></ul>
           </article>
           <article class="pillar reveal">
             <div class="pillar-num">03</div>
             <h3>起業家精神</h3>
             <p>事業を起こし、社会に届ける。ビジネス・倫理・コミュニケーションを実践で。</p>
+            <ul class="tag-list"><li>事業構想</li><li>マーケ</li><li>倫理</li></ul>
           </article>
         </div>
 
@@ -175,7 +231,7 @@
       </div>
     </section>
 
-    <!-- 4. キャンパス・施設紹介 -->
+    <!-- 5. キャンパス・施設 -->
     <section id="campus" class="section section-campus">
       <div class="container">
         <header class="section-head reveal">
@@ -186,26 +242,26 @@
 
         <div class="facility-grid">
           <figure class="facility reveal" data-lightbox-src="assets/img/facility-school.svg" data-lightbox-caption="校舎 — メインビルディング">
-            <img src="assets/img/facility-school.svg" alt="校舎メインビルディングのイラスト" loading="lazy" width="600" height="400" />
+            <div class="facility-img"><img src="assets/img/facility-school.svg" alt="校舎メインビルディングのイラスト" loading="lazy" width="600" height="400" /></div>
             <figcaption><h3>校舎</h3><p>木材をふんだんに使った、温もりのあるメインビルディング。</p></figcaption>
           </figure>
           <figure class="facility reveal" data-lightbox-src="assets/img/facility-lab.svg" data-lightbox-caption="ラボ — Maker Space">
-            <img src="assets/img/facility-lab.svg" alt="ラボのイラスト" loading="lazy" width="600" height="400" />
+            <div class="facility-img"><img src="assets/img/facility-lab.svg" alt="ラボのイラスト" loading="lazy" width="600" height="400" /></div>
             <figcaption><h3>ラボ</h3><p>3Dプリンタ・電子工作・撮影機材まで揃う、つくるための空間。</p></figcaption>
           </figure>
           <figure class="facility reveal" data-lightbox-src="assets/img/facility-cafeteria.svg" data-lightbox-caption="食堂 — Forest Kitchen">
-            <img src="assets/img/facility-cafeteria.svg" alt="食堂のイラスト" loading="lazy" width="600" height="400" />
+            <div class="facility-img"><img src="assets/img/facility-cafeteria.svg" alt="食堂のイラスト" loading="lazy" width="600" height="400" /></div>
             <figcaption><h3>食堂</h3><p>地元食材を活かした食事を、大きな窓から森を眺めながら。</p></figcaption>
           </figure>
           <figure class="facility reveal" data-lightbox-src="assets/img/facility-library.svg" data-lightbox-caption="ライブラリ — Quiet Canopy">
-            <img src="assets/img/facility-library.svg" alt="ライブラリのイラスト" loading="lazy" width="600" height="400" />
+            <div class="facility-img"><img src="assets/img/facility-library.svg" alt="ライブラリのイラスト" loading="lazy" width="600" height="400" /></div>
             <figcaption><h3>ライブラリ</h3><p>静かに思考を深める書架と、対話のためのラウンジ。</p></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- 5. 学生生活・寮生活 -->
+    <!-- 6. 学生生活・寮生活 -->
     <section id="life" class="section section-life">
       <div class="container">
         <header class="section-head reveal">
@@ -239,12 +295,43 @@
           <article class="card reveal">
             <h3>地域との関わり</h3>
             <p>商店街のイベント、農作業、地域企業との共創プロジェクトなど、神山町の人々と共に学ぶ機会が日常にあります。</p>
+            <ul class="bullet-list">
+              <li>地元農家とのコラボ授業</li>
+              <li>商店街での発表会</li>
+              <li>企業サテライトでのインターン</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 6. ギャラリー -->
+    <!-- 7. 学生・教員の声 -->
+    <section id="voices" class="section section-voices">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Voices</p>
+          <h2>学生・教員の声</h2>
+          <p class="section-lead">森の学校で過ごす日々から、聞こえてくる言葉。<small>※架空のサンプルです</small></p>
+        </header>
+
+        <div class="voices-grid">
+          <blockquote class="voice reveal">
+            <p>朝起きて窓を開けると、霧と鳥の声に迎えられる。授業の合間に森を歩くと、新しいアイデアが浮かんできます。</p>
+            <footer>— 1年生 / Aさん</footer>
+          </blockquote>
+          <blockquote class="voice reveal">
+            <p>失敗しても良い、まず作ってみよう、という空気がある。先生も友達も、自分の挑戦を応援してくれる場所です。</p>
+            <footer>— 2年生 / Bさん</footer>
+          </blockquote>
+          <blockquote class="voice reveal">
+            <p>学生たちの「こうしたい」を起点に、技術もデザインも学んでいく。教員自身も毎日学んでいます。</p>
+            <footer>— 教員 / Cさん</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ギャラリー -->
     <section id="gallery" class="section section-gallery">
       <div class="container">
         <header class="section-head reveal">
@@ -258,18 +345,23 @@
           <ul class="carousel-track" tabindex="0">
             <li class="carousel-slide" data-lightbox-src="assets/img/gallery-1.svg" data-lightbox-caption="木漏れ日のキャンパス">
               <img src="assets/img/gallery-1.svg" alt="木漏れ日のキャンパス" loading="lazy" width="800" height="500" />
+              <p class="slide-cap">木漏れ日のキャンパス</p>
             </li>
             <li class="carousel-slide" data-lightbox-src="assets/img/gallery-2.svg" data-lightbox-caption="ラボで制作する学生">
               <img src="assets/img/gallery-2.svg" alt="ラボで制作する学生" loading="lazy" width="800" height="500" />
+              <p class="slide-cap">ラボで制作する学生</p>
             </li>
             <li class="carousel-slide" data-lightbox-src="assets/img/gallery-3.svg" data-lightbox-caption="森の散歩道">
               <img src="assets/img/gallery-3.svg" alt="森の散歩道" loading="lazy" width="800" height="500" />
+              <p class="slide-cap">森の散歩道</p>
             </li>
             <li class="carousel-slide" data-lightbox-src="assets/img/gallery-4.svg" data-lightbox-caption="食堂の窓辺">
               <img src="assets/img/gallery-4.svg" alt="食堂の窓辺" loading="lazy" width="800" height="500" />
+              <p class="slide-cap">食堂の窓辺</p>
             </li>
             <li class="carousel-slide" data-lightbox-src="assets/img/gallery-5.svg" data-lightbox-caption="星空と寮">
               <img src="assets/img/gallery-5.svg" alt="星空と寮" loading="lazy" width="800" height="500" />
+              <p class="slide-cap">星空と寮</p>
             </li>
           </ul>
           <button class="carousel-btn next" type="button" aria-label="次の画像">›</button>
@@ -308,7 +400,8 @@
     <p class="copyright">© <span id="year"></span> Kamiyama Intro Page (Unofficial)</p>
   </footer>
 
-  <!-- ライトボックス -->
+  <button id="toTop" class="to-top" type="button" aria-label="ページ先頭へ戻る">↑</button>
+
   <dialog id="lightbox" class="lightbox" aria-label="画像拡大表示">
     <button class="lb-close" type="button" aria-label="閉じる">×</button>
     <button class="lb-nav lb-prev" type="button" aria-label="前へ">‹</button>

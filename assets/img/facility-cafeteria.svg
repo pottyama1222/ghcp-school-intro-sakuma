@@ -1,29 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="食堂">
   <defs>
-    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="forestG" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#6FA46B"/><stop offset="1" stop-color="#1B2E22"/>
     </linearGradient>
+    <radialGradient id="window-light" cx="0.3" cy="0.1" r="0.8">
+      <stop offset="0" stop-color="#D9C28B" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#D9C28B" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <rect width="600" height="400" fill="#1B2E22"/>
   <!-- big window -->
-  <rect x="40" y="40" width="520" height="220" fill="url(#g2)" stroke="#8C6A4A" stroke-width="6"/>
-  <line x1="300" y1="40" x2="300" y2="260" stroke="#8C6A4A" stroke-width="6"/>
+  <rect x="40" y="30" width="520" height="240" fill="url(#forestG)" stroke="#5B4530" stroke-width="8"/>
+  <rect x="40" y="30" width="520" height="240" fill="url(#window-light)"/>
+  <line x1="300" y1="30" x2="300" y2="270" stroke="#5B4530" stroke-width="6"/>
+  <line x1="40" y1="150" x2="560" y2="150" stroke="#5B4530" stroke-width="4" opacity="0.5"/>
   <!-- trees through window -->
-  <g fill="#0F1B14" opacity="0.6">
-    <polygon points="80,260 120,140 160,260"/>
-    <polygon points="200,260 240,160 280,260"/>
-    <polygon points="320,260 360,150 400,260"/>
-    <polygon points="440,260 480,170 520,260"/>
+  <g fill="rgba(15,27,20,0.85)">
+    <polygon points="60,270 100,120 140,270"/>
+    <polygon points="160,270 210,90 260,270"/>
+    <polygon points="280,270 320,110 360,270"/>
+    <polygon points="380,270 420,100 460,270"/>
+    <polygon points="480,270 520,130 560,270"/>
+  </g>
+  <g fill="#6FA46B" opacity="0.4">
+    <circle cx="100" cy="160" r="40"/>
+    <circle cx="220" cy="140" r="55"/>
+    <circle cx="320" cy="150" r="45"/>
+    <circle cx="420" cy="140" r="50"/>
+    <circle cx="520" cy="160" r="40"/>
+  </g>
+  <!-- birds -->
+  <g fill="#0F1B14">
+    <path d="M150,80 q5,-5 10,0 q5,-5 10,0" fill="none" stroke="#0F1B14" stroke-width="2"/>
+    <path d="M380,60 q5,-5 10,0 q5,-5 10,0" fill="none" stroke="#0F1B14" stroke-width="2"/>
+  </g>
+  <!-- pendant lights -->
+  <g>
+    <line x1="150" y1="0" x2="150" y2="40" stroke="#3a2818" stroke-width="2"/>
+    <ellipse cx="150" cy="48" rx="22" ry="10" fill="#D9C28B"/>
+    <line x1="450" y1="0" x2="450" y2="40" stroke="#3a2818" stroke-width="2"/>
+    <ellipse cx="450" cy="48" rx="22" ry="10" fill="#D9C28B"/>
   </g>
   <!-- table -->
-  <rect x="80" y="290" width="440" height="20" fill="#8C6A4A"/>
-  <rect x="100" y="310" width="20" height="60" fill="#6E5236"/>
-  <rect x="480" y="310" width="20" height="60" fill="#6E5236"/>
+  <rect x="60" y="290" width="480" height="22" fill="#A57E5A"/>
+  <rect x="80" y="312" width="22" height="70" fill="#6E5236"/>
+  <rect x="498" y="312" width="22" height="70" fill="#6E5236"/>
+  <!-- placemats -->
+  <rect x="120" y="280" width="100" height="14" fill="#5B4530" opacity="0.6"/>
+  <rect x="250" y="280" width="100" height="14" fill="#5B4530" opacity="0.6"/>
+  <rect x="380" y="280" width="100" height="14" fill="#5B4530" opacity="0.6"/>
   <!-- plates -->
-  <circle cx="180" cy="290" r="22" fill="#F2EFE6"/>
-  <circle cx="180" cy="290" r="14" fill="#D9C28B"/>
-  <circle cx="300" cy="290" r="22" fill="#F2EFE6"/>
-  <circle cx="300" cy="290" r="14" fill="#6FA46B"/>
-  <circle cx="420" cy="290" r="22" fill="#F2EFE6"/>
-  <circle cx="420" cy="290" r="14" fill="#8C6A4A"/>
+  <ellipse cx="170" cy="290" rx="28" ry="8" fill="#F2EFE6"/>
+  <ellipse cx="170" cy="288" rx="28" ry="8" fill="#F2EFE6"/>
+  <ellipse cx="170" cy="288" rx="18" ry="5" fill="#D9C28B"/>
+  <ellipse cx="300" cy="290" rx="28" ry="8" fill="#F2EFE6"/>
+  <ellipse cx="300" cy="288" rx="28" ry="8" fill="#F2EFE6"/>
+  <ellipse cx="300" cy="288" rx="18" ry="5" fill="#6FA46B"/>
+  <ellipse cx="430" cy="290" rx="28" ry="8" fill="#F2EFE6"/>
+  <ellipse cx="430" cy="288" rx="28" ry="8" fill="#F2EFE6"/>
+  <ellipse cx="430" cy="288" rx="18" ry="5" fill="#A57E5A"/>
+  <!-- glasses -->
+  <rect x="225" y="265" width="14" height="22" fill="#D9C28B" opacity="0.5"/>
+  <rect x="355" y="265" width="14" height="22" fill="#D9C28B" opacity="0.5"/>
+  <!-- vase with branch -->
+  <g transform="translate(250,235)">
+    <rect width="14" height="36" fill="#5B4530"/>
+    <line x1="7" y1="0" x2="0" y2="-30" stroke="#6E5236" stroke-width="2"/>
+    <circle cx="0" cy="-30" r="4" fill="#6FA46B"/>
+    <circle cx="-4" cy="-22" r="3" fill="#6FA46B"/>
+    <circle cx="4" cy="-18" r="3" fill="#6FA46B"/>
+  </g>
+  <!-- floor -->
+  <rect y="382" width="600" height="18" fill="#0F1B14"/>
 </svg>

@@ -1,37 +1,119 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="ライブラリ">
-  <rect width="600" height="400" fill="#1B2E22"/>
-  <!-- bookshelves -->
+  <defs>
+    <radialGradient id="lamp1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#D9C28B" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#D9C28B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="shelf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7A5A3D"/><stop offset="1" stop-color="#5B4530"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="#15241B"/>
+  <!-- floor -->
+  <rect y="320" width="600" height="80" fill="#0F1B14"/>
+  <!-- carpet -->
+  <ellipse cx="300" cy="370" rx="180" ry="20" fill="#5B4530" opacity="0.6"/>
+  <!-- bookshelves left -->
   <g>
-    <rect x="40" y="60" width="160" height="280" fill="#6E5236"/>
-    <rect x="400" y="60" width="160" height="280" fill="#6E5236"/>
-    <g fill="#D9C28B">
-      <rect x="50" y="80" width="14" height="50"/><rect x="68" y="80" width="14" height="50"/>
-      <rect x="86" y="80" width="14" height="50"/><rect x="104" y="80" width="14" height="50"/>
-      <rect x="122" y="80" width="14" height="50"/><rect x="140" y="80" width="14" height="50"/>
-      <rect x="158" y="80" width="14" height="50"/><rect x="176" y="80" width="14" height="50"/>
-    </g>
-    <g fill="#6FA46B">
-      <rect x="50" y="150" width="14" height="50"/><rect x="68" y="150" width="14" height="50"/>
-      <rect x="86" y="150" width="14" height="50"/><rect x="104" y="150" width="14" height="50"/>
-      <rect x="122" y="150" width="14" height="50"/><rect x="140" y="150" width="14" height="50"/>
-      <rect x="158" y="150" width="14" height="50"/><rect x="176" y="150" width="14" height="50"/>
-    </g>
-    <g fill="#8C6A4A">
-      <rect x="50" y="220" width="14" height="50"/><rect x="68" y="220" width="14" height="50"/>
-      <rect x="86" y="220" width="14" height="50"/><rect x="104" y="220" width="14" height="50"/>
-      <rect x="122" y="220" width="14" height="50"/><rect x="140" y="220" width="14" height="50"/>
-      <rect x="158" y="220" width="14" height="50"/><rect x="176" y="220" width="14" height="50"/>
-    </g>
-    <!-- right shelf -->
-    <g fill="#D9C28B"><rect x="410" y="80" width="14" height="50"/><rect x="428" y="80" width="14" height="50"/><rect x="446" y="80" width="14" height="50"/><rect x="464" y="80" width="14" height="50"/><rect x="482" y="80" width="14" height="50"/><rect x="500" y="80" width="14" height="50"/><rect x="518" y="80" width="14" height="50"/><rect x="536" y="80" width="14" height="50"/></g>
-    <g fill="#6FA46B"><rect x="410" y="150" width="14" height="50"/><rect x="428" y="150" width="14" height="50"/><rect x="446" y="150" width="14" height="50"/><rect x="464" y="150" width="14" height="50"/><rect x="482" y="150" width="14" height="50"/><rect x="500" y="150" width="14" height="50"/><rect x="518" y="150" width="14" height="50"/><rect x="536" y="150" width="14" height="50"/></g>
-    <g fill="#8C6A4A"><rect x="410" y="220" width="14" height="50"/><rect x="428" y="220" width="14" height="50"/><rect x="446" y="220" width="14" height="50"/><rect x="464" y="220" width="14" height="50"/><rect x="482" y="220" width="14" height="50"/><rect x="500" y="220" width="14" height="50"/><rect x="518" y="220" width="14" height="50"/><rect x="536" y="220" width="14" height="50"/></g>
+    <rect x="20" y="40" width="180" height="300" fill="url(#shelf)"/>
+    <line x1="20" y1="110" x2="200" y2="110" stroke="#3a2818" stroke-width="2"/>
+    <line x1="20" y1="180" x2="200" y2="180" stroke="#3a2818" stroke-width="2"/>
+    <line x1="20" y1="250" x2="200" y2="250" stroke="#3a2818" stroke-width="2"/>
+    <line x1="20" y1="320" x2="200" y2="320" stroke="#3a2818" stroke-width="2"/>
   </g>
-  <!-- reading lamp -->
-  <g transform="translate(280,200)">
-    <rect x="-2" y="40" width="4" height="80" fill="#8C6A4A"/>
-    <ellipse cx="0" cy="40" rx="40" ry="16" fill="#D9C28B"/>
-    <ellipse cx="0" cy="120" rx="40" ry="6" fill="#6E5236"/>
+  <!-- books left -->
+  <g>
+    <!-- row 1 -->
+    <rect x="30" y="60" width="14" height="50" fill="#D9C28B"/>
+    <rect x="46" y="55" width="14" height="55" fill="#6FA46B"/>
+    <rect x="62" y="62" width="12" height="48" fill="#A57E5A"/>
+    <rect x="76" y="58" width="14" height="52" fill="#8C6A4A"/>
+    <rect x="92" y="64" width="14" height="46" fill="#D9C28B"/>
+    <rect x="108" y="56" width="14" height="54" fill="#6FA46B"/>
+    <rect x="124" y="60" width="14" height="50" fill="#5B4530"/>
+    <rect x="140" y="62" width="14" height="48" fill="#A57E5A"/>
+    <rect x="156" y="58" width="14" height="52" fill="#D9C28B"/>
+    <rect x="172" y="60" width="14" height="50" fill="#6FA46B"/>
+    <!-- row 2 -->
+    <rect x="30" y="130" width="14" height="50" fill="#6FA46B"/>
+    <rect x="46" y="125" width="14" height="55" fill="#A57E5A"/>
+    <rect x="62" y="132" width="12" height="48" fill="#D9C28B"/>
+    <rect x="76" y="128" width="14" height="52" fill="#5B4530"/>
+    <rect x="92" y="134" width="14" height="46" fill="#8C6A4A"/>
+    <rect x="108" y="126" width="14" height="54" fill="#D9C28B"/>
+    <rect x="124" y="130" width="14" height="50" fill="#6FA46B"/>
+    <rect x="140" y="132" width="14" height="48" fill="#A57E5A"/>
+    <rect x="156" y="128" width="14" height="52" fill="#5B4530"/>
+    <rect x="172" y="130" width="14" height="50" fill="#D9C28B"/>
+    <!-- row 3 -->
+    <rect x="30" y="200" width="14" height="50" fill="#A57E5A"/>
+    <rect x="46" y="195" width="14" height="55" fill="#D9C28B"/>
+    <rect x="62" y="202" width="12" height="48" fill="#6FA46B"/>
+    <rect x="76" y="198" width="14" height="52" fill="#A57E5A"/>
+    <rect x="92" y="204" width="14" height="46" fill="#5B4530"/>
+    <rect x="108" y="196" width="14" height="54" fill="#8C6A4A"/>
+    <rect x="124" y="200" width="14" height="50" fill="#D9C28B"/>
+    <rect x="140" y="202" width="14" height="48" fill="#6FA46B"/>
+    <rect x="156" y="198" width="14" height="52" fill="#A57E5A"/>
+    <rect x="172" y="200" width="14" height="50" fill="#5B4530"/>
+    <!-- row 4 -->
+    <rect x="30" y="270" width="14" height="50" fill="#5B4530"/>
+    <rect x="46" y="265" width="14" height="55" fill="#6FA46B"/>
+    <rect x="62" y="272" width="12" height="48" fill="#D9C28B"/>
+    <rect x="76" y="268" width="14" height="52" fill="#A57E5A"/>
+    <rect x="92" y="274" width="14" height="46" fill="#6FA46B"/>
+    <rect x="108" y="266" width="14" height="54" fill="#D9C28B"/>
+    <rect x="124" y="270" width="14" height="50" fill="#8C6A4A"/>
+    <rect x="140" y="272" width="14" height="48" fill="#5B4530"/>
+    <rect x="156" y="268" width="14" height="52" fill="#A57E5A"/>
+    <rect x="172" y="270" width="14" height="50" fill="#6FA46B"/>
   </g>
-  <rect y="340" width="600" height="60" fill="#0F1B14"/>
+  <!-- bookshelves right (mirror simplified) -->
+  <g>
+    <rect x="400" y="40" width="180" height="300" fill="url(#shelf)"/>
+    <line x1="400" y1="110" x2="580" y2="110" stroke="#3a2818" stroke-width="2"/>
+    <line x1="400" y1="180" x2="580" y2="180" stroke="#3a2818" stroke-width="2"/>
+    <line x1="400" y1="250" x2="580" y2="250" stroke="#3a2818" stroke-width="2"/>
+    <line x1="400" y1="320" x2="580" y2="320" stroke="#3a2818" stroke-width="2"/>
+    <g>
+      <rect x="410" y="60" width="14" height="50" fill="#A57E5A"/><rect x="426" y="55" width="14" height="55" fill="#D9C28B"/><rect x="442" y="62" width="12" height="48" fill="#6FA46B"/><rect x="456" y="58" width="14" height="52" fill="#5B4530"/><rect x="472" y="64" width="14" height="46" fill="#8C6A4A"/><rect x="488" y="56" width="14" height="54" fill="#D9C28B"/><rect x="504" y="60" width="14" height="50" fill="#6FA46B"/><rect x="520" y="62" width="14" height="48" fill="#A57E5A"/><rect x="536" y="58" width="14" height="52" fill="#5B4530"/><rect x="552" y="60" width="14" height="50" fill="#D9C28B"/>
+      <rect x="410" y="130" width="14" height="50" fill="#D9C28B"/><rect x="426" y="125" width="14" height="55" fill="#5B4530"/><rect x="442" y="132" width="12" height="48" fill="#A57E5A"/><rect x="456" y="128" width="14" height="52" fill="#6FA46B"/><rect x="472" y="134" width="14" height="46" fill="#D9C28B"/><rect x="488" y="126" width="14" height="54" fill="#8C6A4A"/><rect x="504" y="130" width="14" height="50" fill="#A57E5A"/><rect x="520" y="132" width="14" height="48" fill="#6FA46B"/><rect x="536" y="128" width="14" height="52" fill="#D9C28B"/><rect x="552" y="130" width="14" height="50" fill="#5B4530"/>
+      <rect x="410" y="200" width="14" height="50" fill="#6FA46B"/><rect x="426" y="195" width="14" height="55" fill="#A57E5A"/><rect x="442" y="202" width="12" height="48" fill="#D9C28B"/><rect x="456" y="198" width="14" height="52" fill="#5B4530"/><rect x="472" y="204" width="14" height="46" fill="#6FA46B"/><rect x="488" y="196" width="14" height="54" fill="#A57E5A"/><rect x="504" y="200" width="14" height="50" fill="#D9C28B"/><rect x="520" y="202" width="14" height="48" fill="#5B4530"/><rect x="536" y="198" width="14" height="52" fill="#8C6A4A"/><rect x="552" y="200" width="14" height="50" fill="#D9C28B"/>
+      <rect x="410" y="270" width="14" height="50" fill="#5B4530"/><rect x="426" y="265" width="14" height="55" fill="#D9C28B"/><rect x="442" y="272" width="12" height="48" fill="#6FA46B"/><rect x="456" y="268" width="14" height="52" fill="#A57E5A"/><rect x="472" y="274" width="14" height="46" fill="#D9C28B"/><rect x="488" y="266" width="14" height="54" fill="#5B4530"/><rect x="504" y="270" width="14" height="50" fill="#8C6A4A"/><rect x="520" y="272" width="14" height="48" fill="#A57E5A"/><rect x="536" y="268" width="14" height="52" fill="#6FA46B"/><rect x="552" y="270" width="14" height="50" fill="#D9C28B"/>
+    </g>
+  </g>
+  <!-- center reading area: lamp glow -->
+  <ellipse cx="300" cy="270" rx="140" ry="60" fill="url(#lamp1)"/>
+  <!-- reading desk -->
+  <rect x="240" y="280" width="120" height="14" fill="#7A5A3D"/>
+  <rect x="248" y="294" width="10" height="60" fill="#5B4530"/>
+  <rect x="342" y="294" width="10" height="60" fill="#5B4530"/>
+  <!-- open book -->
+  <g transform="translate(270,272)">
+    <polygon points="0,0 30,-4 30,8 0,12" fill="#F2EFE6"/>
+    <polygon points="30,-4 60,0 60,12 30,8" fill="#F2EFE6"/>
+    <line x1="30" y1="-4" x2="30" y2="8" stroke="#A57E5A" stroke-width="1"/>
+    <g stroke="#5C6A5A" stroke-width=".7">
+      <line x1="4" y1="2" x2="26" y2="0"/><line x1="4" y1="5" x2="26" y2="3"/>
+      <line x1="34" y1="0" x2="56" y2="2"/><line x1="34" y1="3" x2="56" y2="5"/>
+    </g>
+  </g>
+  <!-- desk lamp -->
+  <g transform="translate(310,200)">
+    <rect x="-2" y="0" width="4" height="80" fill="#5B4530"/>
+    <line x1="0" y1="0" x2="-25" y2="-30" stroke="#5B4530" stroke-width="3"/>
+    <ellipse cx="-30" cy="-32" rx="20" ry="10" fill="#D9C28B"/>
+    <ellipse cx="0" cy="80" rx="20" ry="4" fill="#3a2818"/>
+  </g>
+  <!-- chair -->
+  <rect x="270" y="320" width="60" height="6" fill="#5B4530"/>
+  <rect x="272" y="326" width="6" height="20" fill="#5B4530"/>
+  <rect x="322" y="326" width="6" height="20" fill="#5B4530"/>
+  <!-- ceiling pendant lights -->
+  <g>
+    <line x1="120" y1="0" x2="120" y2="20" stroke="#3a2818" stroke-width="2"/>
+    <ellipse cx="120" cy="24" rx="14" ry="6" fill="#D9C28B"/>
+    <line x1="480" y1="0" x2="480" y2="20" stroke="#3a2818" stroke-width="2"/>
+    <ellipse cx="480" cy="24" rx="14" ry="6" fill="#D9C28B"/>
+  </g>
 </svg>
